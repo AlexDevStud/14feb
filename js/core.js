@@ -43,22 +43,16 @@ var swiper = new Swiper(".mySwiper", {
         e = (b % 864E5 / 6E4 | 0) % 60;
         b = Math.floor(b / 864E5);
         a = Math.floor(c / 12);
-        return "\u043f\u0440\u043e\u0448\u043b\u043e: " + [a, c % 12, b, d, e].reduce(function(a, b, c) {
-            return b ? a + pl(b, st[c]) : a
-        }, "")
+        // return ["\u043f\u0440\u043e\u0448\u043b\u043e: " + [a, c % 12, b, d, e].reduce(function(a, b, c) {
+        //     return b ? a + pl(b, st[c]) : a
+        // }, "")]
+        return [a, c, b, d, e,]
     };
     //alert(passed(2022, 11, 11, 0, 0 ));
 
     var dT = document.querySelectorAll(".timer__block"),
     s = new Date().getSeconds();
 
-
-dT[0].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[1];
-dT[1].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[3];
-dT[2].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[5];
-dT[3].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[7];
-dT[4].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[10];
-dT[5].innerHTML = String(s);
     
 
     setInterval(() => {
@@ -66,17 +60,17 @@ dT[5].innerHTML = String(s);
         s = new Date().getSeconds();
 
 
-    dT[0].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[1];
-    dT[1].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[3];
-    dT[2].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[5];
-    dT[3].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[7];
-    dT[4].innerHTML = passed(2022, 11, 11, 0, 0 ).split(" ")[10];
+    dT[0].innerHTML = passed(2022, 11, 11, 0, 0 )[0];
+    dT[1].innerHTML = passed(2022, 11, 11, 0, 0 )[1]%12;
+    dT[2].innerHTML = passed(2022, 11, 11, 0, 0 )[2];
+    dT[3].innerHTML = passed(2022, 11, 11, 0, 0 )[3];
+    dT[4].innerHTML = passed(2022, 11, 11, 0, 0 )[4];
     dT[5].innerHTML = String(s);
     }, 1000);
     
 var anim = document.querySelectorAll(".anim");
 
-console.log(passed(2022, 11, 11, 0, 0 ).split(" ")[10]);
+console.log(passed(2022, 11, 11, 0, 0 ));
 
 for (let i = 0; i < anim.length; i++) {
     
